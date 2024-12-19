@@ -1,7 +1,7 @@
 ﻿@{
     Layout = "~/Views/Shared/Educat_Layout.cshtml";
 }
-
+@model SjHProject.DataModel.Contact
 <!-- contact section -->
 <section class="contact_section  long_section">
     <div class="container">
@@ -13,18 +13,18 @@
                             Contact Us
                         </h2>
                     </div>
-                    <form action="">
+                    <form asp-action="Contact" asp-controller="Educats">
                         <div>
-                            <input type="text" placeholder="Your Name" />
+                            <input type="text" asp-for="Name" placeholder="Your Name" />
                         </div>
                         <div>
-                            <input type="text" placeholder="Phone Number" />
+                            <input type="text" asp-for="Phone" placeholder="Phone Number" />
                         </div>
                         <div>
-                            <input type="email" placeholder="Email" />
+                            <input type="email" asp-for="Email" placeholder="Email" />
                         </div>
                         <div>
-                            <input type="text" class="message-box" placeholder="Message" />
+                            <input type="text" asp-for="Massage" class="message-box" placeholder="Message" />
                         </div>
                         <div class="btn_box">
                             <button>

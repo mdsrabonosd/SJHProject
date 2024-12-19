@@ -1,4 +1,10 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+
+using SjHProject.DataFront;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<ProjectContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Srabon") ?? throw new InvalidOperationException("Connection string 'SjHProjectContext' not found.")));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
